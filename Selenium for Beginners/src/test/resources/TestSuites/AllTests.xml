@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- to run this test suite in cmd, use the following command:
+    mvn clean test -DsuiteXmlFile=[testng.xml] 
+-->
+
+<suite name="AllTests" verbose="1" >
+
+  <test name="PositiveTests" >
+    <classes>
+       <class name="com.herokuapp.theinternet.PositiveTests" />
+    </classes>
+  </test>
+ 
+  <test name="NegativeTests">
+    <classes>
+      <class name="com.herokuapp.theinternet.NegativeTests"/>
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- to run this test suite in cmd, use the following command:
+    mvn clean test -DsuiteXmlFile=[testng.xml] 
+-->
+
+<suite name="NegativeTesting" verbose="1" >
+
+  <test name="NegativeUsernameTests">
+    <!-- 
+        example of putting this test in a grouping
+        <groups>
+            <run>
+                <include name="groupName" />
+            </run>
+        </groups>
+    -->
+    <parameter name="username" value="incorrectUser"></parameter>
+    <parameter name="password" value="SuperSecretPassword!"></parameter>
+    <parameter name="expectedMessage" value="Your username is invalid!"></parameter>
+    <classes>
+      <class name="com.herokuapp.theinternet.NegativeTests"/>
+    </classes>
+  </test>
+
+  <test name="NegativePwdTests">
+
+    <parameter name="username" value="tomsmith"></parameter>
+    <parameter name="password" value="invalidPwd"></parameter>
+    <parameter name="expectedMessage" value="Your password is invalid!"></parameter>
+    <classes>
+      <class name="com.herokuapp.theinternet.NegativeTests"/>
+    </classes>
+  </test>
+</suite>
